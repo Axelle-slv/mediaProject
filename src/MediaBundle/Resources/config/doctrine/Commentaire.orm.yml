@@ -15,4 +15,12 @@ MediaBundle\Entity\Commentaire:
             unique: true
         commentaire:
             type: text
+
+    manyToOne:
+        album:
+            targetEntity: Album
+            inversedBy: commentaires
+            joinColumn:
+                name: album_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

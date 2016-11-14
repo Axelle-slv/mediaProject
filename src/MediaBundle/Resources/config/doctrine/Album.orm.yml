@@ -21,4 +21,9 @@ MediaBundle\Entity\Album:
         support:
             type: string
             length: 255
+
+    oneToMany:
+        commentaires:
+            targetEntity: Commentaire
+            mappedBy: album
     lifecycleCallbacks: {  }

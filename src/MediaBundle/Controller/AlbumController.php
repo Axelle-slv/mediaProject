@@ -3,7 +3,6 @@
 namespace MediaBundle\Controller;
 
 use MediaBundle\Entity\Album;
-use MediaBundle\Entity\Commentaire;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 

@@ -25,12 +25,6 @@ class Commentaire
     private $commentaire;
 
     /**
-     * @ORM\ManyToOne(targetEntity="MediaBundle\Entity\Album")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $album;
-
-    /**
      * Get id
      *
      * @return integer 
@@ -86,16 +80,32 @@ class Commentaire
         return $this->commentaire;
     }
 
+    /**
+     * @var \MediaBundle\Entity\Album
+     */
+    private $album;
 
-    public function setAlbum(Album $album)
+
+    /**
+     * Set album
+     *
+     * @param \MediaBundle\Entity\Album $album
+     * @return Commentaire
+     */
+    public function setAlbum(Album $album = null)
     {
         $this->album = $album;
+
         return $this;
     }
 
+    /**
+     * Get album
+     *
+     * @return \MediaBundle\Entity\Album 
+     */
     public function getAlbum()
     {
         return $this->album;
     }
-
 }
