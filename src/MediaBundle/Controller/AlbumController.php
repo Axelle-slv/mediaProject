@@ -3,6 +3,7 @@
 namespace MediaBundle\Controller;
 
 use MediaBundle\Entity\Album;
+use MediaBundle\Entity\Commentaire;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -49,6 +50,8 @@ class AlbumController extends Controller
             'album' => $album,
             'form' => $form->createView(),
         ));
+
+
     }
 
     /**
@@ -63,6 +66,8 @@ class AlbumController extends Controller
             'album' => $album,
             'delete_form' => $deleteForm->createView(),
         ));
+
+
     }
 
     /**
@@ -121,4 +126,6 @@ class AlbumController extends Controller
             ->getForm()
         ;
     }
+
+
 }
