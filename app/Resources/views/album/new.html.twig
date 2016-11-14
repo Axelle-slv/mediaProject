@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Album creation</h1>
+    <h2>Here you can create the album of your choice</h2>
+    <p>(please feel free to add what you want concerning HipHop, Rock or Soul music)</p>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('_index') }}">Back to the list of albums</a>
+        </li>
+    </ul>
+{% endblock %}

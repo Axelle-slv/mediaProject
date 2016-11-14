@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Welcome on board !</h1>
+    <h2>Here is our albums' list</h2>
+    <p>You can see them, edit/delete them and add as many albums as you want !</p>
+    {% for album in albums %}
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Artiste</th>
+            <th>Genre</th>
+            <th>Support</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><a href="{{ path('_show', { 'id': album.id }) }}">{{ album.id }}</a></td>
+                <td>{{ album.title }}</td>
+                <td>{{ album.artiste }}</td>
+                <td>{{ album.genre }}</td>
+                <td>{{ album.support }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('_show', { 'id': album.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('_edit', { 'id': album.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('_new') }}">Create a new album</a>
+        </li>
+    </ul>
+{% endblock %}
